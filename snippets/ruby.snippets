@@ -545,27 +545,6 @@ snippet mrc
 	remove_column :${1:table_name}, :${2:column_name}
 snippet mrenc
 	rename_column :${1:table_name}, :${2:old_column_name}, :${3:new_column_name}
-#rspec
-snippet it
-	it "${1:spec_name}" do
-		${2}
-	end
-snippet desc
-	describe ${1:class_name} do
-		${2}
-	end
-snippet cont
-	context "${1:message}" do
-		${2}
-	end
-snippet bef
-	before(:${1:each}) do
-		${2}
-	end
-snippet aft
-	after(:${1:each}) do
-		${2}
-	end
 
 #debugging
 snippet debug
