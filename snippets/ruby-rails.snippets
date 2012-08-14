@@ -1,27 +1,3 @@
-snippet art
-	assert_redirected_to ${1::action => "${2:index}"}
-snippet artnp
-	assert_redirected_to ${1:parent}_${2:child}_path(${3:@$1}, ${4:@$2})
-snippet artnpp
-	assert_redirected_to ${1:parent}_${2:child}_path(${3:@$1})
-snippet artp
-	assert_redirected_to ${1:model}_path(${2:@$1})
-snippet artpp
-	assert_redirected_to ${1:model}s_path
-snippet asd
-	assert_difference "${1:Model}.${2:count}", $1 do
-		${3}
-	end
-snippet asnd
-	assert_no_difference "${1:Model}.${2:count}" do
-		${3}
-	end
-snippet asre
-	assert_response :${1:success}, @response.body${2}
-snippet asrj
-	assert_rjs :${1:replace}, "${2:dom id}"
-snippet ass
-	assert_select '${1:path}', :${2:text} => '${3:inner_html' ${4:do}
 snippet bf
 	before_filter :${1:method}
 snippet bt
@@ -116,17 +92,17 @@ snippet i18
 snippet ist
 	<%= image_submit_tag("${1:agree.png}", :id => "${2:id}"${3} %>
 snippet log
-	RAILS_DEFAULT_LOGGER.${1:debug} ${2}
+	Rails.logger.${1:debug} ${2}
 snippet logd
-	logger.debug { "${1:message}" }${2}
+	Rails.logger.debug { "${1:message}" }${2}
 snippet loge
-	logger.error { "${1:message}" }${2}
+	Rails.logger.error { "${1:message}" }${2}
 snippet logf
-	logger.fatal { "${1:message}" }${2}
+	Rails.logger.fatal { "${1:message}" }${2}
 snippet logi
-	logger.info { "${1:message}" }${2}
+	Rails.logger.info { "${1:message}" }${2}
 snippet logw
-	logger.warn { "${1:message}" }${2}
+	Rails.logger.warn { "${1:message}" }${2}
 snippet mac
 	add_column :${1:table}, :${2:column}, :${3:type}
 snippet mapc
@@ -240,6 +216,8 @@ snippet sl
 	end
 snippet sha1
 	Digest::SHA1.hexdigest(${1:string})
+snippet md5
+	Digest::MD5.hexdigest(${1:string})
 snippet sweeper
 	class ${1:ModelClassName}Sweeper < ActionController::Caching::Sweeper
 		observe $1
